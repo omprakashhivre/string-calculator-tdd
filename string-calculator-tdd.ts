@@ -1,4 +1,4 @@
-const stringCalculatorTDD = (numbers) => {
+const add = (numbers) => {
   let actualString = numbers;
   if(!numbers.trim()) return 0;
   try{
@@ -18,7 +18,7 @@ const stringCalculatorTDD = (numbers) => {
     if (negativeNumbers.length > 0) {
       throw new Error(`negative numbers not allowed ${negativeNumbers.join(",")}`);
     }
-      const sum = numberArray.reduce((sum, number) => sum + number);
+      const sum = numberArray.reduce((sum, number) => sum + (isNaN(num) ? 0 : num), 0);
       return sum;
   }
   catch(e){
@@ -29,6 +29,9 @@ const stringCalculatorTDD = (numbers) => {
 const sampleInput = ""
 const sampleInput1 = "1"
 const sampleInput2 = "-1\n-5"
+const sampleInput3 = "1,-5"
+const sampleInput4 =  "//;\n1;-2"
+const sampleInput5 =  "//;\n1;2"
 
-const result  = stringCalculatorTDD(sampleInput2)
+const result  = stringCalculatorTDD(sampleInput5)
 console.log(result)
