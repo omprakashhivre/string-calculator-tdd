@@ -1,7 +1,7 @@
 const stringCalculatorTDD = (numbers) => {
     if(!numbers.trim()) return 0;
     try{
-        const numberArray = numbers.split(",").map((number) => parseInt(number))
+        const numberArray = numbers.split(/,|\n/).map((number) => parseInt(number))
         const sum = numberArray.reduce((sum, number) => sum + number);
         return sum;
     }
